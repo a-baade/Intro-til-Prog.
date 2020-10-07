@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hvem av dem elsker kjealedyr?</title>
+</head>
+<body>
+    
+    <h1>Ønsker du hund eller katt med?</h1>
+    <nav>
+        <ul>
+            <li><a href="alle-profiler.html">Alle profiler</a></li>
+				<li><a href="profil-forslag.html">Profil forslag</a></li>
+                <li><a href="valgfri-funksjonalitet.html">Kjæreste Dyr</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <input id= "dog-btn" type="button" value="Hund"><br>
+    
+    <input id="cat-btn" type="button" value="Katt"><br>
+ 
+    <div id="output_div"></div>
+    
+    <script>
+        
+    var dogBtn =document.getElementById("dog-btn");
+    var catBtn = document.getElementById("cat-btn");
+        
+    var outputDiv = document.getElementById("output_div")
+    
+        
+        var dogProfile = ["dog3.JPG",
+                          "dog1.jpg"];   
+        
+        var catProfile = ["cat2.jpg",
+                          "cat3.jpg",
+                          "cat4.jpg"]; 
+        
+        var dogOwner = ["Per Pettersen",
+                       "Linda Johansen"];
+        
+        var catOwner = ["Lucas Pedersen",
+                       "Trinne Nilsen", 
+                       "Lise Berg"];
+        
+        var dogNames =  ["Una",
+                        "Keiser"];
+        
+        var catNames =  ["Mochi",
+                         "Lady",
+                         "Zhygo"];
+        
+        var dogRace =   [ "Poodle",
+                          "Schäferhund"];
+        
+        var catRace =   ["Siameser Katt",
+                         "Hellig birma",
+                         "Burmeser"];
+        
+        function  showDogProfile(){
+            for (var i = 0; i <dogProfile.length; i ++){
+                outputDiv.innerHTML +=`
+            
+            <img src="images/${dogProfile[i]}">
+            <h3>Eier:${dogOwner[i]}</h3>
+            <p>navn:${dogNames[i]} </p>
+            <p>rase:${dogRace[i]}</p>
+            `;
+            
+        }
+            }
+            function  showCatProfile(){
+            for (var i = 0; i <catProfile.length; i ++){
+                outputDiv.innerHTML +=`
+            
+            <img src="images/${catProfile[i]}">
+            <h3>Eier:${catOwner[i]}</h3>
+            <p>navn:${catNames[i]} </p>
+            <p>rase:${catRace[i]}</p>
+            `;
+            
+        };
+        }
+
+        
+    dogBtn.onclick= showDogProfile;
+    catBtn.onclick = showCatProfile;
+
+        
+    </script>
+</body>
+</html>
