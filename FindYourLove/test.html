@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Et forslag</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+			<h1>FindYourLove</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="alle-profiler.html">Alle profiler</a></li>
+				<li><a href="dagens-profil.html">Dagens profil</a></li>
+			</ul>
+		</nav>
+		
+		<main>
+		
+			<section>
+                
+				<label>Tast inn ønsket alder</label>
+				    <input id="age-input" type="text"><br>
+				<label>Mann eller kvinne?</label>
+				    <input id="gender-input" type="text">
+                
+				<input id="show-profile-btn" type="button" value="Vis forslag">
+			</section>
+			
+			<section id ="output-section"></section>
+			
+		</main>
+		
+	</div>
+    
+	<script>
+
+ //HTML Objects
+
+        var ageInput = document.getElementById("age-input");
+        var genderInput = document.getElementById("gender-input");
+        var showProfileBtn = document.getElementById("show-profile-btn");
+        
+        var outputSection = document.getElementById("output-section");
+
+// Variabler
+        
+        var profile = [
+            ["man1.jpg","Aleksander Olsen:", 22 ,"mann","liker hårprodukt, misliker hvite hulrom"],
+                       
+            ["man2.jpg","Lucas Pedersen:", 26,"mann","liker nattbelyste spaserturer, misliker non-kromatisk luer"],
+                       
+            ["man3.JPG","Per Pettersen:", 32,"mann","liker mørke steder, misliker offentlige steder"],
+                       
+            ["woman1.jpg","Linda Johansen:", 26,"kvinne","liker å stirre, misliker blondiner"],
+                       
+            ["woman2.jpg","Trinne Nilsen:", 19,"kvinne","liker denim, misliker natur"],
+                       
+            ["woman3.jpg","Lise Berg:", 29,"kvinne", "liker polka, misliker koding"],
+        ];           
+        
+//Functions
+        
+                
+        function showProfile (){
+            var age = parseInt(ageInput.value);
+            var gender = genderInput.value;
+            
+            for (var i = 0; i < profile.length; i ++){
+                if (age == 22 && profile[i][2] == 22 && gender === profile[i][3]){
+                    outputSection.innerHTML += `
+                    <article>
+                        <h3>${profile [i][1]}</h3>
+                        <img src="images/${profile[i][0]}">
+                        <p>Alder:${profile[i][2]}</p>
+                        <p>${profile[i][4]}</p>
+                    </article>
+                `;
+                }
+                else if (age == 26 && profile[i][2] == 26 && gender === profile[i][3]){
+                    outputSection.innerHTML += `
+                    <article>
+                        <h3>${profile [i][1]}</h3>
+                        <img src="images/${profile[i][0]}">
+                        <p>Alder:${profile[i][2]}</p>
+                        <p>${profile[i][4]}</p>
+                    </article>
+                `;
+                }
+                else if (age == 32 && profile[i][2] == 32 && gender === profile[i][3]){
+                    outputSection.innerHTML += `
+                    <article>
+                        <h3>${profile [i][1]}</h3>
+                        <img src="images/${profile[i][0]}">
+                        <p>Alder:${profile[i][2]}</p>
+                        <p>${profile[i][4]}</p>
+                    </article>
+                `;
+                }
+                else if (age == 19 && profile[i][2] == 19 && gender === profile[i][3]){
+                    outputSection.innerHTML += `
+                    <article>
+                        <h3>${profile [i][1]}</h3>
+                        <img src="images/${profile[i][0]}">
+                        <p>Alder:${profile[i][2]}</p>
+                        <p>${profile[i][4]}</p>
+                    </article>
+                `;
+                }
+                else if (age == 29 && profile[i][2] == 29 && gender === profile[i][3]){
+                    outputSection.innerHTML += `
+                    <article>
+                        <h3>${profile [i][1]}</h3>
+                        <img src="images/${profile[i][0]}">
+                        <p>Alder:${profile[i][2]}</p>
+                        <p>${profile[i][4]}</p>
+                    </article>
+                `;
+                }
+         
+            }
+        }
+//Event
+                showProfileBtn.onclick= showProfile;
+                    
+    </script>  
+</body>
+</html>

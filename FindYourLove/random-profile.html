@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Random Match-Maker</title>
+</head>
+<body>
+    
+    <div>
+		
+		<header>
+			<h1>Random Profile</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="alle-profiler.html">Alle profiler</a></li>
+				<li><a href="dagens-profil.html">Dagens profil</a></li>
+			</ul>
+		</nav>
+		
+		<main>
+		
+			<section>
+                
+				<input id="show-profile-btn" type="button" value="Få random profil">
+			</section>
+			
+			<section id ="output-section"></section>
+        </main>
+        
+     </div>
+    
+    <script>
+        
+        var showProfileBtn = document.getElementById("show-profile-btn");
+        
+        var outputSection = document.getElementById("output-section");
+
+        
+
+        
+     var randomProfiles = [
+            profile = 0 == ["man1.jpg","Aleksander Olsen:", "22" ,"mann","liker hårprodukt, misliker hvite hulrom"],
+                       
+            profile = 1 == ["man2.jpg","Lucas Pedersen:", "26","mann","liker nattbelyste spaserturer, misliker non-kromatisk luer"],
+                       
+            profile = 2 == ["man3.JPG","Per Pettersen:", "32","mann","liker mørke steder, misliker offentlige steder"],
+                       
+            profile = 3 == ["woman1.jpg","Linda Johansen:", "26","kvinne","liker å stirre, misliker blondiner"],
+                       
+            profile = 4 == ["woman2.jpg","Trinne Nilsen:", "19","kvinne","liker denim, misliker natur"],
+                       
+            profile = 5 == ["woman3.jpg","Lise Berg:","22","kvinne", "liker polka, misliker koding"],
+            ];
+                   
+        function showProfile(){
+            
+            var randomProfiles = Math.floor(Math.random()*(profile.length));
+            for (var i = 0; i< profile.length; i ++){
+            outputSection.innerHTML += `
+                    <article>
+                        <h3>${profile[i][1]}</h3>
+                        <img src="images/${profile[i][0]}">
+                        <p>Alder:${profile[i][2]}</p>
+                        <p>${profile[i][4]}</p>
+                    </article>
+                `;
+                                
+            }
+        }
+        
+        showProfileBtn.onclick= showProfile;
+
+
+    </script>
+
+</body>    
+
+</html>
