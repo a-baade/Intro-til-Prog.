@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Butikk-shopping-mangager</title>
+</head>
+<body>
+<section id = "menu-section">
+
+            <div> 
+                <lable>Type butikk</lable>
+                <input id = "store-txt" type = "text">
+            </div>
+
+            <div>
+                <label>Varer</label>
+                <input id = "items-txt" type = "text">
+            </div>
+
+            <div>
+                <label>Budjsett</label>
+                <input id ="amount-of-txt" type = "text">
+            </div>
+            
+        <input id = manage-shopping-btn type="button" value="Legg til">
+        <input id = remove-shopping-btn type="button" value= "Fjern">
+        </section>
+            
+            <section id ="output-section">
+            </section>
+    <script>
+        
+    //HTML OBJEKTER
+        
+        var storeTxt = document.getElementById ("store-txt");
+        var itemsTxt = document.getElementById ("items-txt");
+        var budgetTxt = document.getElementById ("amount-of-txt");
+        
+        var outputSection = document.getElementById("output-section");
+        
+        var addTaskBtn = document.getElementById ("manage-shopping-btn");
+        var removeTaskBtn = document.getElementById("remove-shopping-btn");
+        
+    //EVENTS 
+        
+        addTaskBtn.onclick = addTask;
+        removeTaskBtn.onclick = removeTask;
+    
+    //TASK INDEX
+    
+        var taskIndex = 1;
+    
+    //FUNCTION 
+    
+        function addTask(){
+            var store = storeTxt.value;
+            var items = itemsTxt.value;
+            var budget = budgetTxt.value;
+            
+            var taskId= `task-${taskIndex}`;
+            
+            var htmlTxt = `
+                <article id ="${taskId}">
+                    <h3>${store}</h3>
+                    <p>${items}</p>
+                    <p>${budget}kr.</p>
+                </article>
+            `;
+            
+            outputSection.innerHTML += htmlTxt;
+
+            taskIndex++;
+        }
+        function removeTask(){
+            var remove =  outputSection;
+        }
+        
+        
+    </script>
+</body>
+
+</html>
